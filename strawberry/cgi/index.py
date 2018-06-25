@@ -25,20 +25,24 @@ with open(htmlpath + 'contenttemplate.html', 'r') as contenttemp:
     conttemp = contenttemp.read()
 types = ['subservers', 'articles', 'games', 'other']
 paths = {}
-names = {}
+#names = {}
 content = {}
 for type in types:
     paths[type] = glob.glob(htmlpath+type+'/*')
-    names[type] = []
-    for item in paths[type]:
-        names[type].append(item.split('/')[5])
+    #names[type] = []
+    #for item in paths[type]:
+    #    names[type].append(item.split('/')[5])
     content[type] = "<table><tr>"
     count = 0
-    for name in names[type]:
+    for path in paths[type]:
+        htmpth = "".join(path.split("/html"))
+        with open(path + '/title.txt') as titletxt:
+            title = titletxt.read()
+        with open(path + '/description.txt') as desctxt:
+            desc = desctxt.read()
+        content[type] += conttemp%(htmpth, htmpth, title, title, desc)
         count += 1
-        path = vpath + type + "/" + name
-        content[type] += conttemp%(path, name, path, name)
-        if (count % 3 == 0):
+        if (count % 4 == 0):
             content[type] += "</tr><tr>"
     content[type] += "</tr></table>"
 index = index%(content[types[0]], content[types[1]], content[types[2]], content[types[3]])

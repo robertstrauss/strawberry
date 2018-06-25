@@ -1,80 +1,74 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-  <title>Thuh Stwahbehweeh Nehtwuhk</title>
+  <link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
   <style>
-    #top{}
-    .content{
-      padding-left: 15%%;
+    body {
+      font-family: 'Advent Pro';font-size: 50px;
+      background-color: rgb(240, 240, 240);
+    }
+    a{
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.8);
     }
     .card{
-      background-color: rgba(255, 255, 255, 0.9);
-      color: black;
-      border-radius: 16px;
-      margin: 16px 10%%;
-      padding: 8px;
+      width: 320px;
+      height: 480px;
+      background: rgb(255, 255, 255)
+      display: inline-block;
     }
-    .blur {
-      position: relative;
-      line-height: 1.5;
-      overflow: hidden;
+    #top{
+      height: 700px;
+      line-height: 700px;
+      background: url("../../strawberry/strawberries.jpg") 0 / cover fixed;
+      font-size: 100px;
+      color:white;
+      padding: 16px;
+      margin: 0px;
     }
-    .blur::before{
-      content: '';
-      margin: -35px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      filter: blur(8px);
-      z-index: -1;
-    }
-    .blur::before, body {
-      background: url(https://maxpull-tlu7l6lqiu.stackpathdns.com/wp-content/uploads/2015/04/sequoia-strawberry.jpg) 0 / cover fixed;
-    }
-    body{
-      margin: auto;
-      border-radius: 10px;
-      max-width: 1500px;
-    }
-    button{
-      border: outset;
-      border-radius: 16px;
-      cursor: pointer;
-      width: 100px;
+    #articles{
+      color: rgba(0, 0, 0, 0.8);
+
+      padding: 16px;
+      margin: 0px;
     }
   </style>
 </head>
-<body><center><div class='blur'>
-  <div id='top' class='card'>
-    <h1>Thuh Stwahbehweeh Nehtwuhk</h1>
-    <table><tr>
-      <td><a href='#subservers'><button class='card'>subservers</button></a></td>
-      <td><a href='#articles'><button class='card'>articles</button></a></td>
-      <td><a href='#games'><button class='card'>games</button></a></td>
-      <td><a href='#other'><button class='card'>other stuff</button></a></td>
-    </tr></table>
+<body>
+  <div id="top">
+    <center>The Strawberry Network</center>
   </div>
-
-  <div id='subservers' class='card'>
-    <h2>Subservers</h2>
-    <hr>
-    %s
-  </div>
-  <div id='articles' class='card'>
+  <div id="articles">
     <h2>Articles</h2>
-    <hr>
-    %s
+    <center>
+      <div class="content">
+        %s
+      </div>
+    </center>
   </div>
-  <div id='games' class='card'>
+  <div id="games">
     <h2>Games</h2>
-    <hr>
-    %s
+    <center>
+      <div class="content">
+        %s
+      </div>
+    </center>
   </div>
-  <div id='other' class='card'>
+  <div id="subservers">
+    <h2>Subservers</h2>
+    <center>
+      <div class="content">
+        %s
+      </div>
+    </center>
+  </div>
+  <div id="other">
     <h2>Other Stuff</h2>
-    <hr>
-    %s
+    <center>
+      <div class="content">
+        %s
+      </div>
+    </center>
   </div>
-</div></center></body>
+</body>
 </html>
