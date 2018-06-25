@@ -12,7 +12,7 @@ hash = hashlib.sha1()
 hash.update(token)
 hash = hash.hexdigest()
 htmlpath = '../../html/strawberry/'
-realpath = '../../strawberry/'
+vpath = '../../strawberry/'
 print("Content-type: text/html\n\n")
 page = ""
 with open(htmlpath + 'index.html', 'r') as indexhtml:
@@ -36,7 +36,7 @@ for type in types:
     count = 0
     for name in names[type]:
         count += 1
-        path = realpath + type + "/" + name
+        path = vpath + type + "/" + name
         content[type] += conttemp%(path, name, path, name)
         if (count % 3 == 0):
             content[type] += "</tr><tr>"
