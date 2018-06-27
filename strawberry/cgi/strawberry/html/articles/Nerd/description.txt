@@ -1,0 +1,1 @@
+And then if we take it's reciprical twice, multiply it by i^4, integrate its derivative, we find that... we are not getting anywhere.
